@@ -10,6 +10,7 @@ add_library(developer_lib
     src/developer.cpp
     src/junior_developer.cpp
     src/senior_developer.cpp
+    include/developer.hpp
 )
 target_include_directories(developer_lib PUBLIC include)
 
@@ -18,5 +19,6 @@ target_include_directories(main_app PUBLIC include)
 target_link_libraries(main_app developer_lib)
 
 enable_testing()
-add_subdirectory(tests)
-
+add_executable(test_developer tests/developer_test.cpp)
+target_link_libraries(test_developer developer_lib gtest gtest_main)
+add_test(NAME DeveloperTest COMMAND test_developer)

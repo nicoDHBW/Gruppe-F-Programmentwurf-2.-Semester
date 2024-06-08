@@ -9,6 +9,9 @@ int main() {
     auto junior = std::make_shared<JuniorDeveloper>("Peter Parker", "Spiderman");
     auto senior = std::make_shared<SeniorDeveloper>("Diana Prince", "Wonder Woman");
 
+    junior->load_logo_from_file( "../code_4_exam/assets/spiderman.txt");
+    senior->load_logo_from_file( "../code_4_exam/assets/wonder_woman.txt");
+
     developers.push_back(junior);
     developers.push_back(senior);
 
