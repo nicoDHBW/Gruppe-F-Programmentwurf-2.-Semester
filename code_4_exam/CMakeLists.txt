@@ -18,7 +18,6 @@ add_executable(main_app src/main.cpp)
 target_include_directories(main_app PUBLIC include)
 target_link_libraries(main_app developer_lib)
 
+add_subdirectory(tests)
+ 
 enable_testing()
-add_executable(test_developer tests/developer_test.cpp)
-target_link_libraries(test_developer developer_lib gtest gtest_main)
-add_test(NAME DeveloperTest COMMAND test_developer)
