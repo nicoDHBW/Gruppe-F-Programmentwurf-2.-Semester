@@ -15,13 +15,12 @@ protected:
     void TearDown() override {
         delete junior;
         delete senior;
-    }
-};
+    } 
+};  
 
 TEST_F(DeveloperTest, TestLogoLoading) {
-    junior->load_logo_from_file("../assets/logo.txt");
+    junior->load_logo_from_file("/workspaces/Gruppe-F-Programmentwurf-2.-Semester/code_4_exam/tests/logo.txt");
     EXPECT_FALSE(junior->get_logo().empty());
-
     EXPECT_THROW(junior->load_logo_from_file("invalid_file.txt"), std::runtime_error);
 }
 
